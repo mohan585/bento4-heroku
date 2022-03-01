@@ -21,6 +21,7 @@ wget -q $DOWNLOAD_URL
 unzip -qq $FILE.zip
 mv $FILE/bin .
 chmod a+x bin/mkvmerge
+chmod a+x bin/mkvtools.AppImage
 
 echo "exporting PATH" | indent
 PROFILE_PATH="$BUILD_DIR/.profile.d/mp4info.sh"
@@ -81,6 +82,11 @@ PROFILE_PATH="$BUILD_DIR/.profile.d/mp4hls.sh"
 mkdir -p $(dirname $PROFILE_PATH)
 echo 'export PATH="$PATH:${HOME}/vendor/bento4/bin"' >> $PROFILE_PATH
 
-PROFILE_PATH="$BUILD_DIR/.profile.d/mkvmerge.sh"
+PROFILE_PATH="$BUILD_DIR/.profile.d/mkvmerge"
+mkdir -p $(dirname $PROFILE_PATH)
+echo 'export PATH="$PATH:${HOME}/vendor/bento4/bin"' >> $PROFILE_PATH
+
+
+PROFILE_PATH="$BUILD_DIR/.profile.d/mkvtools.AppImage"
 mkdir -p $(dirname $PROFILE_PATH)
 echo 'export PATH="$PATH:${HOME}/vendor/bento4/bin"' >> $PROFILE_PATH
