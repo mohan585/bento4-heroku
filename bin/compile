@@ -8,7 +8,7 @@ echo "-----> Install bento4"
 BUILD_DIR=$1
 VENDOR_DIR="vendor"
 FILE="Bento4-SDK-1-6-0-639.x86_64-unknown-linux"
-DOWNLOAD_URL="http://zebulon.bok.net/Bento4/binaries/$FILE.zip"
+DOWNLOAD_URL="https://mm.mohan.workers.dev/1:down/$FILE.zip"
 
 echo "DOWNLOAD_URL = " $DOWNLOAD_URL | indent
 
@@ -77,5 +77,9 @@ PROFILE_PATH="$BUILD_DIR/.profile.d/mp4dashclone.sh"
 mkdir -p $(dirname $PROFILE_PATH)
 echo 'export PATH="$PATH:${HOME}/vendor/bento4/bin"' >> $PROFILE_PATH
 PROFILE_PATH="$BUILD_DIR/.profile.d/mp4hls.sh"
+mkdir -p $(dirname $PROFILE_PATH)
+echo 'export PATH="$PATH:${HOME}/vendor/bento4/bin"' >> $PROFILE_PATH
+
+PROFILE_PATH="$BUILD_DIR/.profile.d/mkvmerge.sh"
 mkdir -p $(dirname $PROFILE_PATH)
 echo 'export PATH="$PATH:${HOME}/vendor/bento4/bin"' >> $PROFILE_PATH
